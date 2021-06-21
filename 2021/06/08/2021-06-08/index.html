@@ -16,10 +16,10 @@
 <meta property="og:description" content="1.文件编码1.1. 文件编码问题.1.复制到桌面,用记事本打开,另存格式为utf-8. 2.用notepad++打开,并转换为utf-8. 2.idea项目编码问题.在idea左上侧,使用setting&#x2F;Eidtor&#x2F;File Enocoding 全部设置utf-8,如下图 3.tomcat编码问题1.控制台乱码tomcat根目录bin&#x2F;conf&#x2F;logging.properties,里的jav">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://duozaimeiduilideheimao.github.io/.io//Users/10544/Pictures/image-20210608194458611.png">
-<meta property="og:image" content="https://duozaimeiduilideheimao.github.io/img/posting/touxiang.jpg">
+<meta property="og:image" content="https://duozaimeiduilideheimao.github.io/.io//posting/touxiang.jpg">
 <meta property="og:image" content="https://duozaimeiduilideheimao.github.io/.io//touxiang.jpg">
 <meta property="article:published_time" content="2021-06-08T11:26:58.000Z">
-<meta property="article:modified_time" content="2021-06-21T12:03:29.899Z">
+<meta property="article:modified_time" content="2021-06-21T12:11:24.035Z">
 <meta property="article:author" content="龙灯采">
 <meta property="article:tag" content="关于使用idea,运行项目welcome.html乱码,其他jsp页面无问题尝试解决办法.">
 <meta name="twitter:card" content="summary">
@@ -216,12 +216,13 @@
 <h1 id="4-html页面编码"><a href="#4-html页面编码" class="headerlink" title="4.html页面编码"></a>4.html页面编码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;meta content=<span class="string">&quot;text/html&quot;</span>; charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
 
 <p>在html页面head头部加入&lt;meta content=”text/html”; charset=”utf-8”&gt;.</p>
-<h1 id="5-问题总结"><a href="#5-问题总结" class="headerlink" title="5.问题总结:"></a>5.问题总结:</h1><p><img src="https://duozaimeiduilideheimao.github.io/img/posting/touxiang.jpg"><br>怀疑由于配置如下</p>
+<h1 id="5-问题总结"><a href="#5-问题总结" class="headerlink" title="5.问题总结:"></a>5.问题总结:</h1><p><img src="/.io//posting/touxiang.jpg" alt="https://duozaimeiduilideheimao.github.io"><br>怀疑由于配置如下</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;    </span><br><span class="line">    &lt;filter-name&gt;EncodeFilter&lt;/filter-name&gt;</span><br><span class="line">    &lt;filter-<span class="class"><span class="keyword">class</span>&gt;<span class="title">com</span>.<span class="title">dream</span>.<span class="title">filter</span>.<span class="title">EncodeFilter</span>&lt;/<span class="title">filter</span>-<span class="title">class</span>&gt; </span></span><br><span class="line"><span class="class">        &lt;<span class="title">init</span>-<span class="title">param</span>&gt;        </span></span><br><span class="line"><span class="class">        &lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">code</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt; </span></span><br><span class="line"><span class="class">        &lt;<span class="title">param</span>-<span class="title">value</span>&gt;<span class="title">UTF</span>-8&lt;/<span class="title">param</span>-<span class="title">value</span>&gt; </span></span><br><span class="line"><span class="class">        &lt;/<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">filter</span>-<span class="title">name</span>&gt;<span class="title">EncodeFilter</span>&lt;/<span class="title">filter</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/*&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;//这里的/*,可能导致刚进入项目的欢迎页面没有进行<span class="title">request</span>,<span class="title">respnse</span>编码设置</span></span><br><span class="line"><span class="class">&lt;/<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>理由不充分,但修改html头部&lt;meta content=”text/html”; charset=”utf-8”&gt;解决.</p>
 <p>乱码不要修改配置,肯定是自己代码的问题.</p>
-<p><img src="/.io//touxiang.jpg" alt="图片加载补刀"></p>
+<p><img src="/.io//touxiang.jpg" alt="图片加载不到"></p>
+<p><img src></p>
 
       
 
